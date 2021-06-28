@@ -1,0 +1,62 @@
+
+syntax = "proto3";
+
+option go_package = "github.com/HanFa/learn-go/grpc-example/route";
+
+package route;
+
+/* 
+描述一个向导服务，服务名为RouteGuide
+定义四种不同的信息类型分别为Point, Rectangle, Feature, RouteSummary以及Chat。
+定义四个方法
+1. GetFeature (输入为一个Point，返回这个点的Feature)
+2. ListFeatures (输入为一个Rectangle，输出流这个区域内所有的Feature)
+3. RecordRoute (输入流为每个时间点的位置Point，返回一个RouteSummary)
+4. Recommend (输入流RecommendationRequest，输出流Feature)
+ */
+
+message Point {
+  int32 latitude = 1;
+  int32 longitude = 2;
+}
+
+message Rectangle {
+    Point lo = 1;
+    Point hi = 2;
+}
+
+message Feature {
+  string name = 1;
+  Point location = 2;
+}
+
+message RouteSummary {
+  int32 point_count = 1;
+  int32 distance = 2;
+  int32 elapsed_time = 3;
+}
+
+enum RecommendationMode {
+  GetFarthest = 0;
+  GetNearest = 1;
+}
+
+message RecommendationRequest {
+    RecommendationMode mode = 1;
+    Point point = 2;
+}
+
+service RouteGuide {
+  // unary
+  rpc GetFeature(Point) returns (Feature) {}
+
+  // server side streaming
+  rpc ListFeatures(Rectangle) returns (stream Feature) {}
+
+  // client side streaming
+  rpc RecordRoute(stream Point) returns (RouteSummary) {}
+
+  // bidirectional streaming
+  rpc Recommend(stream RecommendationRequest) returns (stream Feature) {}
+
+}
