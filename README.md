@@ -16,6 +16,6 @@
 | Testing & Benchmarking    |   [testing-example](./testing-example)            | https://www.bilibili.com/video/BV1kv411p7Am    |
 | Reflection              	|    [reflection-example](./reflection-example)            |     https://www.bilibili.com/video/bv1V5411T7NH        |
 | Bili  Stream Example              	|    [bili-stream-example](./bili-stream-example)            |     https://www.bilibili.com/video/BV1v64y1t742      |
-| gRPC Example              	|    [grpc-example](./grpc-example)            |            |
+| gRPC Example              	|    [grpc-example](./grpc-example)            |      https://www.bilibili.com/video/BV1DV411s7ij      |
 
 
