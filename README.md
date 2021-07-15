@@ -9,7 +9,7 @@
 | Packages                |             	| https://www.bilibili.com/video/BV1Ff4y187q9    |
 | Array/Slice/Map            |             	| https://www.bilibili.com/video/BV1Jo4y1y7yZ    |
 | Type Systems            |             	| https://www.bilibili.com/video/BV1n54y1G7vy    |
-| Goroutine                |             	| https://www.bilibili.com/video/BV1Wy4y1u7cj    |
+| Goroutine                |     [goroutine-example](./goroutine-example)        	| https://www.bilibili.com/video/BV1Wy4y1u7cj    |
 | Concurrent Models        |     [concurrent-models-example](./concurrent-models-example)        	| https://www.bilibili.com/video/BV18y4y1u7kP    |
 | Go Modules                |             	| https://www.bilibili.com/video/BV1w64y197wo    |
 | Context                    |    [context-example](./context-example)            | https://www.bilibili.com/video/BV1rh411a7iz/    |
