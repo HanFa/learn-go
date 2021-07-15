@@ -23,7 +23,7 @@ func say(id string) {
 
 
 func main() {
-	wg.Add(2)
+	wg.Add(2)  // 总共有两个任务
 
 	go func(id string) {
 		fmt.Println(id)
@@ -32,7 +32,7 @@ func main() {
 
 	go say("world")
 
-	wg.Wait()
+	wg.Wait()  // 等待所有任务完成 卡住，如果wg不是0
 	fmt.Print("exit")
 }
 
