@@ -86,11 +86,16 @@ func runForth(client pb.RouteGuideClient) {
 
 	// this goroutine listen to the server stream
 	go func() {
-		feature, err2 := stream.Recv()
-		if err2 != nil {
-			log.Fatalln(err2)
+		for {
+			feature, err2 := stream.Recv()
+			if err2 == io.EOF {
+				break
+			}
+			if err2 != nil {
+				log.Fatalln(err2)
+			}
+			fmt.Println("Recommended: ", feature)
 		}
-		fmt.Println("Recommended: ", feature)
 	}()
 
 	reader := bufio.NewReader(os.Stdin)

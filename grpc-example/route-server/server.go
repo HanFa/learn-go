@@ -143,7 +143,10 @@ func (s *routeGuideServer) Recommend(stream pb.RouteGuide_RecommendServer) error
 		if err != nil {
 			return err
 		}
-		return stream.Send(recommended)
+		err = stream.Send(recommended)
+		if err != nil {
+			return err
+		}
 	}
 }
 
